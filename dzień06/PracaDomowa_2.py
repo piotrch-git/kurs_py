@@ -38,27 +38,27 @@ class Postac:
         else:
             print(f"{self.imie} już nie żyje")
 
-    def daj_przedmiot(self,p):
-        if isinstance(p, Przedmiot):
-            self.ekwipunek.append(Przedmiot(p))
-        else:
-            print("daj mi Przedmiot")
+    def daj_przedmiot(self,p,bonus):
+   #     if isinstance(p, Przedmiot):
+        self.ekwipunek.append(Przedmiot(p,bonus))
+    #    else:
+    #        print("daj mi Przedmiot")
 
     def wypisz_ekwipunek(self):
         print(f"{self.imie} posiada: {self.ekwipunek}")
 
 class Przedmiot:
-    def __init__(self,nazwa,bonus):
-        self.nazwa=nazwa
+    def __init__(self,p,bonus):
+        self.p=p
         self.bonus=bonus
     def __str__(self):
-        return f"{self.nazwa=},{self.bonus=}"
+        return f"{self.p=},{self.bonus=}"
 
 #O to jakas zmiana
 
 rufus = Postac("Zenek", 200)
 rufus.wypisz_ekwipunek()
-rufus.daj_przedmiot(Przedmiot("siekiera",10))
+rufus.daj_przedmiot(Przedmiot("siekiera",10),10)
 rufus.wypisz_ekwipunek()
 rufus.wypisz_info()
 rufus.otrzymaj_obrazenia(100)
