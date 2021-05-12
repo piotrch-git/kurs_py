@@ -54,7 +54,7 @@ class Przedmiot:
     def __str__(self):
         return f"{self.nazwa=},{self.bonus=}"
 
-
+#O to jakas zmiana
 
 rufus = Postac("Zenek", 200)
 rufus.wypisz_ekwipunek()
