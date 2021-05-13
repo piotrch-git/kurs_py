@@ -18,16 +18,39 @@ class Robot:
     def __init__(self):
         self.x=0
         self.y=0
-        self.zwrot="N"
+        self.zwrot=0
+        self.kierunki=["N","E","S","W"]
+
 
     def wypisz(self):
-        print(self.x,self.y,self.zwrot)
+        print(self.x,self.y,self.kierunki[self.zwrot % 4])
 
+    def prawo(self):
+        self.zwrot += 1
+
+    def naprzod(self):
+        if self.zwrot % 4 == 0:
+            self.y += 1
+        elif self.zwrot % 4 == 1:
+            self.x += 1
+        elif self.zwrot % 4 == 2:
+            self.y -= 1
+        elif self.zwrot % 4 == 3:
+            self.x -= 1
+
+    def lewo(self):
+        self.zwrot -= 1
+
+    def wykonaj(self,instrukcje):
+        for i in instrukcje:
+            if i == "P":
+                self.prawo()
+            elif i == "L":
+                self.lewo()
+            elif i == "N":
+                self.naprzod()
 
 Robi = Robot()
 Robi.wypisz()
-
-a = -1
-kierunki = ["N","E","S","W"]
-ix = a % 4
-print(kierunki[ix])
+Robi.wykonaj("NNPNLNPP")
+Robi.wypisz()
