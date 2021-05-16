@@ -11,3 +11,9 @@ zbiór = {1,2,3}
 
 
 # Integery w pythonie nie mają max rozmiaru, ale po 4B spada wydajność (python przechowuje je inaczej)
+
+
+#stack trace  - to jest ta hierarchia przy wywalaniu czerwonego errora gdzie widać co w czym zostało przerwane
+
+
+# słownika nie można sortować

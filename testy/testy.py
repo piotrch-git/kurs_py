@@ -14,3 +14,5 @@ def calc(*args):
     return sum
 
 print(calc(1,2,3))
+
+
